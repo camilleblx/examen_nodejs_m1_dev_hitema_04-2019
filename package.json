@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "star:rest": "node ./api/index.js",
     "test:watch": "jest --watch",
     "lint": "eslint \"./**/*.js\""
   },
