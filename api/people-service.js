@@ -1,15 +1,19 @@
 const fs = require('fs');
-
+ 
 module.exports = class PeopleService {
     constructor() {
         this.peoples = JSON.parse(fs.readFileSync(__dirname + '/people.json', 'utf8'));
     }
-
+ 
     updatePeople(id, people) {
-        // To be implemented!
+        const index = this.peoples.findIndex(myPeople => myPeople.id == id);
+        console.log(index);
+        if(index > 0){
+            this.peoples[index] = people.name;
+        }
     }
-    
-    getPeople(filters) {
-        // To be implemented!
+   
+    getPeople() {
+        return this.peoples;
     }
 }
